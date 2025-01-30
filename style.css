@@ -1,0 +1,490 @@
+body{
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background-color: rgb(255,255,255);
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: rgb(62,65,82);
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    font-weight: 600; 
+    transition: font-weight 0.2s ease-in-out;
+  }
+  
+#header{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background-color: white;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+    
+
+}
+#left{
+    display: flex;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+
+}
+#logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.element{
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12.5px;
+}
+#darkMode{
+    height: 15px;
+    width: 40px;
+    background-color:rgb(113,114,136);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    padding-left: 5px;
+    cursor: pointer;
+    justify-content: flex-start;
+    transition: justify-content 0.8s ease;
+    transition: justify-content 0.8s ease;
+    padding-right: 5px;
+}
+.darkMode{
+    transition: background-color 0.3s ease;
+    background-color: #ff3f6c;
+}
+.helloI{
+    background-color: blue;
+}
+#darkModeStatus{
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+}
+
+.helloI{
+    background-color: blue;
+}
+
+#searchBox{
+    display: flex;
+    flex-direction: row;
+}
+.offer{
+    cursor: pointer;
+}
+.boey{
+    color: blue;
+}
+#searchIcon{
+    width: 42px;
+    height: 44px;
+    background-color: #F5F5F6;
+    background-image: url(IMAGES/search\ icon.png);
+    background-position: center;
+    background-size: contain;
+}
+#searchBar{
+    background-color: rgb(245,245,246);
+    width: 325px;
+    height: 42px;
+}
+#searchBarIn{
+    border: none;
+    background-color: rgb(245,245,246);
+    width: 325px;
+    height: 42px;
+    outline: none;
+}
+#right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#system{
+    display: flex;
+    width: 194px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+#icon1{
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 19px;
+    margin-right: 10px;
+}
+#icon2{
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+#icon2 div a{
+    display: r;
+        font-size: 13px;
+
+}
+#searchBoxIn:focus {
+    border: none;
+}
+
+#icon3{
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 10px;
+}
+#header{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* USING MEDIA */
+#body1{
+    margin-top: 10px;
+}
+.media{
+    height: 50px;
+}
+#vid{
+    height: inherit;
+}
+#vid {
+    width: 100%; 
+    overflow: hidden;  
+    margin: 15px;
+    display: flex;
+}
+#videoPlay{
+    border-radius: 15px;
+    overflow: hidden;
+}
+#videoPlay video {
+    max-width: 1080px; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+#textPlace{
+    margin: 10px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    border: 1px solid #ccc; 
+    border-radius: 15px;
+    margin-right: 25px;
+}
+#imageI{
+    border-radius: 15px;
+}
+#imageb1{
+    width: 100%; 
+    height: 360px;
+    overflow: hidden;  
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+#imageI img{
+    width: 650px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+#maps{
+    width: 100%; 
+    height: 360px;
+    overflow: hidden;  
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+#map{
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.textMap b{
+    margin: 20px;
+}
+
+/* Appling Flexbox to the items */
+#body2{
+    margin-top: 30px;
+}
+#itemsB2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#textB2 b{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    border-radius: 15px;
+}
+.item{
+    border: 2px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px;
+    height: 300px;
+    width: 200px;
+
+}
+.itemImage{
+    width: 100%;
+    height: 230px;
+    background-color: white;
+}
+.itemText{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-size: 500;
+    font-weight: 700;
+    overflow: hidden;
+}
+#last{
+    width: 120vh;    
+    height: 300px;
+    flex-grow: 1;         
+    flex-basis: 0;      
+    min-width: 200px;
+}
+#last{
+    font-size: 40px;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    border-radius: 15px;
+    font-size: clamp(12px, 2vw, 40px); 
+    overflow: hidden; 
+    text-align: center; 
+}
+#last b{
+    margin: 30px;
+}
+
+#login{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+}
+#loginPop{
+    width: 400px;
+    height: 100%;
+    background-color: white;
+
+}
+#offerContent{
+    height: 160px;
+    width: 400px
+}
+#offerContent img{
+    width: 100%;
+}
+#LOGINSIGN{
+    font-size: 19px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+#phone{
+    display: flex;
+    margin: 30px;
+    border: 1px solid #d4d5d9;
+    overflow: hidden;
+    padding-left: 10px;
+    background-color: white;
+    font-size: 14px;
+    border: 1px solid #d4d5d9;
+    font-size: 14px;
+    padding: 7px 12px;
+    line-height: 16px;
+    height: auto;
+    color: #282c3f;
+}
+#contactHr{
+    margin: 0;
+    padding: 0;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 4px;
+    background-color: white;
+}
+#contactIcon{
+    width: 41px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+}
+#contactBar{
+    background-color: white;
+    width: 325px;
+    height: 40px;
+}
+#contactBarIn{
+    margin-left: 5px;
+    border: none;
+    background-color: white;
+    width: 325px;
+    height: 40px;
+    font-size: 16px;
+    outline: none;
+    color: #282c3fcc;
+}
+#link{
+    text-align: center;
+    font-size: 12px;
+    color: #282c3fcc;
+    margin: 25px;
+}
+#submitContinue{
+    cursor: pointer;
+    background-color: #ff3f6c;
+    text-align: center;
+    padding: 12px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 25px;
+
+}
+#link2{
+    font-size: 12px;
+    color: #282c3fcc;
+    margin: 25px;
+    margin-left: 39px;
+}
+#loginPop a b{
+    color: #ff3f6c;
+}
+#offerReward {
+    height: 600px;
+    width: 800px;
+    overflow: hidden;
+    height: 500px;
+    width: 700px;
+    background-image: url(extraImages/coup.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1; 
+    text-align: center;
+    margin-top: 200px; 
+}
+.offerRewardWork{
+    display: none;
+}
+#bigSale{
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    font-family: "Emilys Candy", serif;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transform: translateX(-23%) translateY(60%);
+}
+#coupanCode{
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    font-family: "Emilys Candy", serif;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transform: translateX(22%) translateY(-65%);
+}
+#close-offer{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    transform: translateX(2070%) translateY(-340px);
+
+}
+#coupanCode1{
+    font-size: 35px;
+}
+#coupanCode2{
+    font-family: "Alatsi", serif;
+}
+
+#topSale{
+    margin-left: 100px;
+}
+#discountSale{
+    display: flex;
+    gap: 10px;
+    font-size: 100px;
+    font-family: "Emilys Candy", serif;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transform: translateX(57%) translateY(-45%);
+
+}
+#percentValue{
+    font-size: 70px;
+
+    margin-top: 30px;
+
+}
