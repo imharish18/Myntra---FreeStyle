@@ -24,7 +24,7 @@ a:hover {
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     background-color: white;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
-    
+    z-index: 1000;
 
 }
 #left{
@@ -487,4 +487,728 @@ a:hover {
 
     margin-top: 30px;
 
+}
+
+/* Adding toWear List */
+#toWear{
+    height: 100vh;
+    width: 100%;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(133, 130, 130);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#toWearHead{
+    padding-top: 19px;
+    font-size: 70px;
+    padding-bottom: 19px;
+    font-weight: 700;
+}
+#toWearContent{
+    height: 80%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#leftPortion{
+    height: 100%;
+    width: 100%;
+
+}
+#rightPortion{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#toWearPopUp{
+    height: 500px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 4%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#toWearHead{
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#toWearHead img{
+    height: 100px;
+    width: 100px;
+    object-fit: fill;
+}
+
+#inputAboveText{
+    width: 100%;
+    text-align: start;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+#listOfToWear{
+    margin: 15px;
+    height: 100%;
+    width: 90%;
+    border : 2px solid #282c3f;
+}
+#inputBOX{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#toDoInput{
+    outline: none;
+    font-size: 15px;
+    width: 80%;
+    padding-left: 15px;
+    height: 20px;
+    background-color: inherit;
+    border-radius: clamp(15px,3%,3%);
+}
+#toDoInputSubmit {
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(-35%,-52%); /* Vertically center the button */
+    background-color: #ff3f6c;
+    color: white;
+    border: none;
+    padding: 0px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    align-items: center;
+    border-radius: clamp(15px,4%,4%);
+}
+
+#toDoInputSubmit:hover {
+    background-color: #fd2356;
+    border: 2px 2px 10px grey
+
+}
+#listOfToWear{
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 3%;
+    overflow: scroll;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30px;
+
+}
+#removeButton{
+    height: 20px;
+    width: 40px;
+    font-size: 12px;
+    margin-right: 10px;
+
+
+}
+#addButton{
+    height: 20px;
+    width: 40px;
+    font-size: 13px;
+    margin-right: 10px;
+
+}
+
+/* Fashion with Face */
+#fashionQuotes{
+    height: 10vh;
+    padding-top: 30px;
+    width: 100%;
+
+}
+#tableQuote{
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#fashionWithFace {
+    height: 120vh;
+    width: 100%;
+    background-color: #F3F3F3;
+}
+
+#tableBox {
+    height: 100vh;
+    width: 80%;
+    overflow: auto; 
+    margin: 0 auto; 
+    border: 2px double black;
+    border-collapse: collapse;
+}
+
+#tableBox table {
+    height: 100%;
+    width: 100%;
+    table-layout: fixed; 
+    border-collapse: collapse; 
+
+}
+
+#tableBox table th, #tableBox table td {
+    text-align: center; 
+    padding: 5px; 
+    border: 2px solid #000; 
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#tableBox table img {
+    width: 100px;
+    height: auto; 
+    max-width: 100%; 
+}
+#tableText1{
+    font-size: 20px;
+}
+#tableText1{
+    font-size: 30px;
+}
+#tableHeart{
+    font-size: 50px;
+}
+
+/* Fashion Hovering */
+#fashionHovering{
+    height: 80vh;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+}
+.fashionHoveringImage {
+    position: relative; /* Added this */
+    height: 80%;
+    width: 20%;
+    border: 3px solid black;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 4%;
+    overflow: hidden;
+}
+
+.fashionHoveringImage .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(61, 56, 56, 0.5); 
+    opacity: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease-in;
+    backdrop-filter: blur(2px);
+}
+.fashionHoveringImage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.fashionHoveringImage:hover .overlay{
+    opacity: 1;
+}
+
+.fashionHoveringImage .overlay .text{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fashionHoveringImage:hover{
+    transform: scale(1.01); 
+}
+
+/* OFFER TIME  */
+#startTimeOffer{
+    height: 80vh;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}
+#imageTimeOffer{
+    height: 100%;
+    width: 100%;
+    margin-left: 5%;
+    background-image: url(IMAGES/OfferHead.png);
+    background-repeat: none;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+#panelTime{
+    margin-top: 1%;
+    width: 70%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push elements to edges */
+    align-items: center;
+    padding-right: 50px;
+    margin-right: 50px;
+    margin-left: 80px;
+    color: white;
+
+}
+#offerOffTime{
+    margin-left: 2%;
+    font-weight: 900;
+    font-size: 50px;
+    margin-right: 150px;
+}
+#timeButton{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 16px;
+    border: 2px solid #fd2356;
+    color: #fff;
+    background-color: #ff4742;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+    font-weight: 800;
+    font-size: 16px;
+    height: 72px;
+    
+    
+    
+}
+#realTime{
+    font-size: 40px;
+    font-weight: 600;   
+    text-align: center;
+    display: none;
+
+}
+#timeWarn{
+    font-size: 20px;
+    font-weight: 400;
+}
+#timeButton:hover{
+    background: 0 0;
+    color: #ff4742;
+}
+
+/* Image SLider */
+#imageSlider{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: contain; /* or cover */
+    background-repeat: no-repeat;
+
+
+}
+#imgSliderImage{
+    height: 100%;
+    width: 80%;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: url(IMAGES/imageSliderOpt.png);
+    background-repeat: no-repeat;
+    background-position: center; /* Centers the image */
+    background-size: contain; /* Ensures the whole image fits inside */
+    text-align: center;
+}
+
+/* From Uiverse.io by Web-Potato */ 
+/* Background Blur (Hidden Initially) */
+#popupBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: 998;
+}
+
+/* Popup Slider (Hidden Initially) */
+#popupSlider {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    max-width: 80%;
+    z-index: 999;
+}
+
+#popupImage {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+/* Close Button */
+#closePopup {
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: white;
+}
+
+/* Left & Right Navigation Buttons */
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+/* Button Styling */
+#buttonSlider {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 400px;
+    margin-left: -700px;
+}
+
+#buttonSlider span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+#buttonSlider span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+#buttonSlider span:not(hover) {
+    transition: all 1s;
+}
+/* JOKE API */
+#leftPortion{
+    height: 100%;
+    width: 100%;
+}
+#leftPortionH1, #leftPortionH2{
+    font-size: 50px;
+    color: #F13AB1;
+}
+#leftPortionH1 b, #leftPortionH2 b{
+    color: #E72744;
+};
+#jokeBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#JokeStart{
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+#JokeEnd{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+#nextJoke{
+    margin-top: 20px;
+    text-align: center;
+
+}
+#nextJoke button{
+    border-radius: 15px;
+    font-size: larger;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FD913C;
+    background-color: #29303E;
+    box-shadow: 2px 2px 10px #FD913C;
+    cursor: pointer;
+}
+/* Adding Seciton */
+#fashionSection{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 30px;
+
+}
+#section1{
+    flex-grow: 1;
+    width: 100%;
+    background-color: #F13AB1;
+}
+#section2{
+    flex-grow: 1;
+    width: 100%;
+    background-color: #E72744;
+}
+#section3{
+    width: 100%;
+    flex-grow: 1;
+    background-color:  #FD913C;
+}
+#section4{
+    width: 100%;
+    flex-grow: 1;
+    background-color:  #F05524;
+}
+#section5{
+    flex-grow: 1;
+    width: 100%;
+    background-color:  #662371;
+}
+#section6{
+    flex-grow: 1;
+    width: 100%;
+    background-color: #0072BB;
+}
+#section7{
+    flex-grow: 1;
+    width: 100%;
+    background-color:  #F5881F;
+}
+#sectionCut{
+    height: 60%;
+    width: 15%;
+    border: 3px solid black;
+    border-radius: clamp(15px, 10px, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+
+}
+#sectionArea{
+    height: 100%;
+}
+#sectionDataCut{
+    height: 100%;
+    width: 60%;
+    background-color: #e727446e;
+    overflow-y: auto;  
+    padding-right: 10px; 
+
+
+}
+#sectionWhatsNew{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+#sectionDeals{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+#sectionTrends{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+#sectionSteals{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+#sectionHype{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+#sectionFeature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+#sectionSports{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+.sectionHeading{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+}
+.subHeadingText{
+    font-size: 20px;
+
+}
+
+/* NEW */
+#fashionSection {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 30px;
+}
+
+/* Left Section */
+#sectionCut {
+    height: 60%;
+    width: 15%;
+    border: 3px solid black;
+    border-radius: clamp(15px, 10px, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sectionArea {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the left section items */
+.sectionArea:hover {
+    background-color: #000;
+    color: white;
+}
+
+/* Right Section */
+#sectionDataCut {
+    height: 100%;
+    width: 60%;
+    background-color: #e727446e;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Default style for each section */
+.sectionContent {
+    display: none; /* Hide all sections by default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+
+.sectionHeading {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.subHeading {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
 }
