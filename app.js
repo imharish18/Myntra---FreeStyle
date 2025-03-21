@@ -3,12 +3,12 @@ function darkModeOn(value){
         let header = document.querySelector("#header");
         let headerText = document.querySelectorAll(".headerText");
         let textPlace = document.querySelectorAll("#textPlace");
-
-
+        let glassImage = document.querySelectorAll("#glassImage");
         
         if(value){
             body.style.backgroundColor = "#1A1A1A"
             document.querySelector("input").style.caretColor = "white";
+
             headerText.forEach((element) => {
                 element.style.color = "#D4D4D4"; 
             }); 
@@ -16,6 +16,11 @@ function darkModeOn(value){
             textPlace.forEach((element) => {
                 element.style.backgroundColorColor = "#292929"; 
             }); 
+            glassImage.forEach((element) => {
+                element.style.filter = "invert(100%) brightness(200%)";
+            });
+            
+
             header.style.backgroundColor = "rgb(21, 21, 21)";
             body.style.color = "white"; 
 
@@ -25,6 +30,12 @@ function darkModeOn(value){
             document.querySelector("input").style.caretColor = "black";
             headerText.forEach((element) => {
                 element.style.color = "black"; 
+            });
+            headerText.forEach((element) => {
+                element.style.color = "black"; 
+            });
+            glassImage.forEach((element) => {
+                element.style.filter = "invert(100%) brightness(-200%)";
             });
 
             header.style.backgroundColor = "white"; 
@@ -69,11 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 let stopConfetti =  true; 
-function givingOffer() {
+let imageTimeOffer = document.querySelector("#imageTimeOffer");
+
+function givingOffer(val) {
     let offerReward = document.querySelector("#offerReward");
     offerReward.classList.remove("offerRewardWork");
     stopConfetti = false; 
+    let discountValue = document.querySelector("#discountValue");
+    discountValue.textContent = val;
     
 }
 
@@ -81,14 +97,13 @@ function closingOffer() {
     let offerReward = document.querySelector("#offerReward");
     offerReward.classList.add("offerRewardWork");
     stopConfetti = true;
-
 }
-
+let discountValue = document.querySelector("#discountValue");
 document.addEventListener("DOMContentLoaded", () => {
     let offer = document.querySelector(".offer");
 
     offer.addEventListener("click", () => {
-        givingOffer();
+        givingOffer(Math.floor(Math.random() * 11) + 40);
         work1();
     });
 });
@@ -153,12 +168,13 @@ function addTask() {
 
         const removeButton = document.createElement("button");
         removeButton.id = "removeButton";
-        removeButton.textContent = "❌";
+        removeButton.textContent = "x";
 
 
         const doneButton = document.createElement("button");
         doneButton.id = "addButton";
         doneButton.textContent = "✔";
+        doneButton.style.color = "white";
 
 
         buttonsDiv.appendChild(removeButton);
@@ -352,7 +368,7 @@ function getNewJoke() {
 
   fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,sexist') //
     .then(response => response.json()).then(data => {
-
+        nextJokeButton.textContent = "Another";
       if (data.type === 'twopart') {
 
         JokeStart.textContent = "Setup: " + data.setup;    
@@ -365,8 +381,8 @@ function getNewJoke() {
     })
     .catch(error => console.error('Error fetching joke:', error));
 }
+nextJokeButton.addEventListener("click",getNewJoke)
 
-getNewJoke();
 
 
 function handleSectionClick(sectionId) {
@@ -410,4 +426,224 @@ document.getElementById('section6').addEventListener('click', function() {
 
 document.getElementById('section7').addEventListener('click', function() {
     handleSectionClick('sectionSports');
+});
+
+
+// REALTIME CLOCK
+// function updateClock() {
+//     const clock = document.getElementById("time");
+//     const now = new Date();
+  
+//     let hours = now.getHours();
+//     let minutes = now.getMinutes();
+//     let seconds = now.getSeconds();
+//     const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+//     hours = hours % 12;
+//     hours = hours ? hours : 12; 
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
+    
+//     const timeString = hours + ":" + minutes + ":" + seconds + " " + ampm;
+    
+//     clock.innerHTML = timeString;
+//   }
+  
+//   setInterval(updateClock, 1000);
+  
+//   updateClock();
+// Function to update the clock every second
+function updateClock() {
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("min");
+    const secondsElement = document.getElementById("sec");
+  
+    const now = new Date();
+  
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+  
+    hours = hours % 12;
+    hours = hours ? hours : 12; 
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    if(now.getHours < 12){
+        hoursElement.innerHTML = hours + " PM";
+    }
+    else{
+        hoursElement.innerHTML = hours + " AM";
+    }
+    minutesElement.innerHTML = minutes;
+    secondsElement.innerHTML = seconds;
+  }
+  
+  setInterval(updateClock, 1000);
+  
+  updateClock();
+  
+// QUIZ
+document.addEventListener("DOMContentLoaded", function () {
+    const quizSection = document.getElementById("quizSection");
+    const quizPopUp = document.getElementById("quizPopUp");
+    const quizPopupContent = document.getElementById("quizPopupContent");
+    const quizStartButton = document.getElementById("quizStartButton");
+    const quizStartButtonRealStart = document.getElementById("quizStartButtonRealStart");
+    const quizRules = document.getElementById("quizRules");
+    const topHeadingQuiz = document.getElementById("topHeadingQuiz");
+    const midHeadQuiz = document.getElementById("midHeadQuiz");
+    const quizFooter = document.getElementById("quizFooter");
+    const quizEnd = document.getElementById("quizEnd");
+    const quizQuestion = document.getElementById("quizQuestion");
+    const options = document.querySelectorAll(".quizOption");
+    const scoreDisplay = document.getElementById("Score");
+    const quizTimeCount = document.getElementById("quizTimeCount");
+    const restartQuiz = document.getElementById("restartQuiz");
+    const skipQuiz = document.getElementById("skipQuiz");
+    const closeQuiz = document.getElementById("closeQuiz");
+    const submitQuiz = document.getElementById("submitQuiz");
+    const quizScoreNumber = document.getElementById("quizScoreNumber");
+    const quizEndYayy = document.getElementById("quizEndButtonRealStart");
+    
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let timer;
+
+    async function loadQuestions() {
+        const response = await fetch("questions.json");
+        questions = await response.json();
+        questions = questions.sort(() => Math.random() - 0.5);
+        startQuiz();
+    }
+
+    function showQuizRules() {
+        quizPopUp.style.display = "flex";
+        quizPopupContent.style.display = "flex";
+        quizRules.style.display = "flex";
+        quizRules.style.flexDirection = "column";
+        topHeadingQuiz.style.display = "none";
+        midHeadQuiz.style.display = "none";
+        midHeadQuiz.style.flexDirection = "column";
+        quizFooter.style.display = "none";
+        quizEnd.style.display = "none";
+    }
+
+    function startQuiz() {
+        quizRules.style.display = "none";
+        topHeadingQuiz.style.display = "flex";
+        midHeadQuiz.style.display = "flex";
+        quizFooter.style.display = "flex";
+        currentQuestionIndex = 0;
+        score = 0;
+        scoreDisplay.textContent = `Score: ${score}`;
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        if (currentQuestionIndex >= 10 || currentQuestionIndex >= questions.length) {
+            endQuiz();
+            return;
+        }
+        
+        let currentQuestion = questions[currentQuestionIndex];
+        quizQuestion.textContent = `Q${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+        
+        options.forEach((option, index) => {
+            let optionKey = String.fromCharCode(65 + index);
+            option.textContent = `${optionKey}. ${currentQuestion[optionKey]}`;
+            option.onclick = () => checkAnswer(optionKey, currentQuestion.answer);
+        });
+
+        resetTimer();
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        let timeLeft = 30;
+        quizTimeCount.textContent = timeLeft;
+        timer = setInterval(() => {
+            timeLeft--;
+            quizTimeCount.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        }, 1000);
+    }
+
+    function blinkBackground(color, times, interval, callback) {
+        let count = 0;
+        let originalColor = quizPopupContent.style.background;
+        let blinkInterval = setInterval(() => {
+            quizPopupContent.style.background = count % 2 === 0 ? color : originalColor;
+            count++;
+            if (count === times * 2) {
+                clearInterval(blinkInterval);
+                quizPopupContent.style.background = originalColor;
+                if (callback) callback();
+            }
+        }, interval);
+    }
+
+    function checkAnswer(selected, correct) {
+        clearInterval(timer);
+        if (selected === correct) {
+            score += 5;
+            blinkBackground("#52a447", 1, 200, () => {
+                currentQuestionIndex++;
+                loadQuestion();
+            });
+        } else {
+            score -= 3;
+            blinkBackground("red", 2, 200, () => {
+                currentQuestionIndex++;
+                loadQuestion();
+            });
+        }
+        scoreDisplay.textContent = `Score: ${score}`;
+    }
+
+    function endQuiz() {
+        topHeadingQuiz.style.display = "none";
+        midHeadQuiz.style.display = "none";
+        quizFooter.style.display = "none";
+        quizEnd.style.display = "flex";
+        quizEnd.style.flexDirection = "column";
+        quizScoreNumber.textContent = `Final Score: ${score}`;
+    }
+
+    quizStartButton.onclick = showQuizRules;
+    quizStartButtonRealStart.onclick = loadQuestions;
+    restartQuiz.onclick = loadQuestions;
+    skipQuiz.onclick = () => {
+        clearInterval(timer);
+        currentQuestionIndex++;
+        loadQuestion();
+    };
+    
+    closeQuiz.onclick = () => {
+        quizPopUp.style.display = "none";
+        quizPopupContent.style.display = "none";
+    };
+    
+    quizPopUp.onclick = (event) => {
+        if (event.target === quizPopUp) {
+            quizPopUp.style.display = "none";
+            quizPopupContent.style.display = "none";
+        }
+    };
+    
+    submitQuiz.onclick = () => {
+        endQuiz();
+    };
+    quizEndYayy.onclick = () => {
+        endQuiz();
+        givingOffer(score>5 ? score : 5);
+        work1();
+        quizPopUp.style.display = "none";
+    };
 });

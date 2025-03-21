@@ -490,12 +490,19 @@ a:hover {
 }
 
 /* Adding toWear List */
+#jokingApiPort{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 #toWear{
-    height: 100vh;
+    height: 70vh;
     width: 100%;
     margin: 10px;
     border-radius: 20px;
-    border: 1px solid rgb(133, 130, 130);
+    background: linear-gradient(145deg, #0D1B2A, #1B263B, #415A77, #778DA9);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -506,6 +513,12 @@ a:hover {
     font-size: 70px;
     padding-bottom: 19px;
     font-weight: 700;
+}
+#toWearHead1{
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-weight: 700;
+    font-size: 20px;
 }
 #toWearContent{
     height: 80%;
@@ -529,14 +542,15 @@ a:hover {
 
 }
 #toWearPopUp{
-    height: 500px;
+    height: 450px;
     width: 400px;
-    border: 2px solid black;
+    border: 2px solid rgb(50, 48, 48);
     border-radius: 4%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 3px 3px 5px black;
 }
 #toWearHead{
     font-size: 20px;
@@ -544,6 +558,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 #toWearHead img{
     height: 100px;
@@ -564,7 +579,38 @@ a:hover {
     height: 100%;
     width: 90%;
     border : 2px solid #282c3f;
+box-shadow: 2px 2px 5px black;
+
 }
+#listOfToWear {
+    overflow-y: auto;   
+    overflow-x: hidden; 
+    max-height: 300px;  
+    scrollbar-width: thin; 
+    scrollbar-color: white transparent; 
+    white-space: nowrap; 
+}
+
+/* Chrome, Edge, Safari */
+#listOfToWear::-webkit-scrollbar {
+    width: 6px; /* Thin scrollbar */
+}
+
+#listOfToWear::-webkit-scrollbar-thumb {
+    background-color: white; /* White scrollbar */
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+#listOfToWear::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly darker on hover */
+}
+
+#listOfToWear::-webkit-scrollbar-track {
+    background: transparent; /* No visible track */
+}
+
+
 #inputBOX{
     width: 100%;
     display: flex;
@@ -578,14 +624,13 @@ a:hover {
     width: 80%;
     padding-left: 15px;
     height: 20px;
-    background-color: inherit;
     border-radius: clamp(15px,3%,3%);
 }
 #toDoInputSubmit {
     height: 20px;
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 51%;
     transform: translate(-35%,-52%); /* Vertically center the button */
     background-color: #ff3f6c;
     color: white;
@@ -619,19 +664,23 @@ a:hover {
 
 }
 #removeButton{
+    background-color: #E72744;
+    color: white;
     height: 20px;
     width: 40px;
     font-size: 12px;
     margin-right: 10px;
-
+    border-radius: 8px;
 
 }
 #addButton{
+    background-color: skyblue;
+    color: white;
     height: 20px;
     width: 40px;
-    font-size: 13px;
+    font-size: 12px;
     margin-right: 10px;
-
+    border-radius: 8px;
 }
 
 /* Fashion with Face */
@@ -653,7 +702,7 @@ a:hover {
 #fashionWithFace {
     height: 120vh;
     width: 100%;
-    background-color: #F3F3F3;
+
 }
 
 #tableBox {
@@ -830,15 +879,15 @@ a:hover {
 
 /* Image SLider */
 #imageSlider{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 600px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    height: 500px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-position: center;
-    background-size: contain; /* or cover */
+    background-size: contain; 
     background-repeat: no-repeat;
 
 
@@ -850,13 +899,10 @@ a:hover {
     text-align: center;
     background-image: url(IMAGES/imageSliderOpt.png);
     background-repeat: no-repeat;
-    background-position: center; /* Centers the image */
+    background-position: center; 
     background-size: contain; /* Ensures the whole image fits inside */
     text-align: center;
 }
-
-/* From Uiverse.io by Web-Potato */ 
-/* Background Blur (Hidden Initially) */
 #popupBackground {
     position: fixed;
     top: 0;
@@ -869,7 +915,6 @@ a:hover {
     z-index: 998;
 }
 
-/* Popup Slider (Hidden Initially) */
 #popupSlider {
     position: fixed;
     top: 50%;
@@ -889,7 +934,7 @@ a:hover {
     max-height: 80vh;
 }
 
-/* Close Button */
+
 #closePopup {
     width: 30px;
     position: absolute;
@@ -920,7 +965,7 @@ a:hover {
 #prevBtn { left: 10px; }
 #nextBtn { right: 10px; }
 
-/* Button Styling */
+
 #buttonSlider {
     padding: 0.1em 0.25em;
     width: 13em;
@@ -931,7 +976,7 @@ a:hover {
     font-size: 12px;
     cursor: pointer;
     position: relative;
-    margin-top: 400px;
+    margin-top: 330px;
     margin-left: -700px;
 }
 
@@ -1211,4 +1256,369 @@ a:hover {
     font-size: 20px;
     font-weight: 400;
     text-align: center;
+}
+#timeSection{
+    height: 70vh;
+    width: 100%;
+    background-color: #0072BB;
+    display: flex;
+
+}
+#leftMapSection{
+    height: 70vh;
+    width: 50%;
+    background-color: red;
+    background-image: url(IMAGES/worldMap.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#time{
+    height: 70vh;
+    width: 50%;
+    background: linear-gradient(125deg, #162635, #090F1B);
+    color: white;
+}
+#realTimeClock{
+    height: 70vh;
+    width: 350px;
+}
+#time{
+    font-weight: 700;
+    font-size: 50px;
+}
+#hours{
+    font-size: 130px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+#timeOther{
+    position: relative;
+    bottom: 60px;
+}
+#min{
+    font-size: 120px;
+    margin: 0;
+    padding: 0;
+    margin-left: 30%;
+}
+#sec{
+    font-size: 120px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#minORsecColon{
+    font-size: 90px;
+    text-align: center;
+}
+#country{
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+
+}
+#timeSlogan{
+    font-size: 55px;
+    text-align: center;
+    margin-top: 10px;
+}
+#timeSlogan2{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 350;
+}
+#timeSlogan3{
+    position: relative;
+    bottom: 50px;
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+}
+
+/* QUIZ CSS */
+
+#quizSection{
+    height: 70vh;
+    width: 100%;
+    background-image: url(IMAGES/sunset.gif);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#quizText1, #quizText2{
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+}
+#quizStartButton{
+    height: 70px;
+    width: 200px;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 40px;
+    margin: 50px;
+    box-shadow: 2px 2px 10px black;
+    cursor: pointer;
+    margin-top: 250px;
+
+}
+/* The background blur */
+.blur-background {
+    filter: blur(5px);
+    pointer-events: none; /* Disable interactions with blurred content */
+    transition: filter 0.3s ease;
+}
+
+/* Popup Modal Styling */
+#quizPopUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    display: none;
+    overflow: hidden; 
+    backdrop-filter: blur(5px);
+}
+#headRules{
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+#quizPopupContent{
+    height: 70vh;
+    width: 60%;
+    background-color: white;
+    border-radius: clamp(25px, 15px, 40px);
+    z-index: 20; 
+    position: relative; 
+    box-shadow: 4px 4px 30px black;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, 
+    rgba(231, 39, 68, 1),  
+    rgba(241, 58, 177, 0.9), 
+    rgba(253, 145, 60, 0.9), 
+    rgba(240, 85, 36, 1));
+    color: white;
+}
+#topHeadingQuiz{
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: 700;
+    flex: 1;
+}
+#topHeadingQuiz button{
+    height: 30px;
+    width: 80px;
+    background-color: #E72744;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+#quizFooter{
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    flex: 1;
+}
+#midHeadQuiz{
+    flex: 9;
+}
+#restartQuiz{
+    height: 30px;
+    width: 100px;
+    background-color: #FD913C;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#skipQuiz{
+    height: 30px;
+    width: 100px;
+    background-color: #F05524;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+#submitQuiz{
+    height: 30px;
+    width: 100px;
+    background-color: #F13AB1;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+#quizQuestion{
+    font-size: 35px;
+    margin-left: 10px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.quizOption{
+    margin: 7px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: 40px;
+    transition: background-color 0.3s linear;
+
+}
+
+.quizOption:hover{
+    font-weight: 630;
+    box-shadow: 1px 1px 1px black;
+    background: linear-gradient(135deg, 
+    rgba(104, 96, 98, 0.9),  
+    rgba(175, 125, 157, 0.9), 
+    rgba(163, 131, 106, 0.9), 
+    rgba(161, 126, 115, 0.9));
+}
+#quizPopupContent button:hover{
+    box-shadow: 1px 1px 1px black;
+    font-weight: 550;
+}
+#importantRule{
+    margin-top: 60px;
+    font-size: 13px;
+    margin-left: 30px;
+
+}
+#quizStartButtonRealStart{
+    height: 50px;
+    width: 150px;
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content; 
+    margin: auto; 
+    margin-top: 50px;
+}
+#quizRules{
+    display: none;
+}
+
+#quizEndButtonRealStart{
+    height: 80px;
+    width: 150px;
+    font-size: 50px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding-right: 45px;
+    padding-left: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content; 
+    margin: auto; 
+    margin-top: 50px;
+}
+#quizScore{
+    text-align: center;
+    font-size: 80px;
+    font-weight: 800;
+    
+}
+#quizScoreNumber{
+    text-align: center;
+    font-size: 100px;
+    font-weight: 800;
+
+}
+#quizEnd{
+    display: none;
+}
+#topHeadingQuiz, #midHeadQuiz, #quizFooter{
+    display: none;
+}
+
+#glassImage{
+    filter: invert(100%) brightness(-200%);
+}
+
+#doucmentationHeading{
+    font-size: 50px;
+    font-weight: 700;
+}
+#rootDocumentation{
+    display: flex;
+    padding-top: 20px;
+}
+#sideSection{
+
+    height: 100%;
+    width: 50%;
+    flex: 1.5;
+
+}
+#mainSection{
+    background-color: #0072BB;
+    width: 50%;
+    flex: 8.5;
+}
+.typeDocumentation{
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.typeDocumentation div{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 5px;
+}
+.typeDocumentation div:hover{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 500;
+    background-color: #0073bb38;
+    border-radius: 10px;
+
 }
