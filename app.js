@@ -618,3 +618,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", changeActiveNav);
 });
+// API URL
+function aqIndex(aqi, element){
+    if (aqi === 1) element = "Good";
+    else if (aqi === 2) element.textContent = `AQI: ${aqi} Moderate`;
+    else if (aqi === 3) element.textContent = `AQI: ${aqi} Sensitive`;
+    else if (aqi === 4) element.textContent = `AQI: ${aqi} Unhealthy`;
+    else if (aqi === 5) element.textContent = `AQI: ${aqi} V.Unhealthy`;
+    else if (aqi === 6) element.textContent = `AQI: ${aqi} Hazardous`;
+}
+function cloudPer(cloudVal, element){
+    let cloud = cloudVal;
+        if (cloud >= 0 && cloud < 10) {
+            element.textContent = "☀️ Clear Sky";
+        } else if (cloud >= 10 && cloud < 30) {
+            element.textContent = "🌤️ Mostly Clear";
+        } else if (cloud >= 30 && cloud < 50) {
+            element.textContent = "⛅ Cloudy Sky";
+        } else if (cloud >= 50 && cloud < 70) {
+            element.textContent = "🌥️ Mostly Cloudy";
+        } else if (cloud >= 70 && cloud <= 100) {
+            element.textContent = "☁️ Overcast";
+        }
+}
+function tempCF(c, f, element) {
+    let isCelsius = false;
+    element.textContent = `${c}°C`
+
+    setInterval(() => {
+        element.textContent = isCelsius ? `${c}°C` : `${f}°F`;
+        isCelsius = !isCelsius; 
+    }, 3000);
+}
+
+function storeAndRedirect(event, sectionId) {
+    event.preventDefault(); // Prevent default anchor behavior
+    localStorage.setItem("scrollTarget", sectionId); // Store section ID
+    window.location.href = "href/redirect1.html"; // Redirect manually
+}

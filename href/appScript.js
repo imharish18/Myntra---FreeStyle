@@ -1,7 +1,7 @@
 function scrollToSection(sectionId) {
     let section = document.getElementById(sectionId);
     if (section) {
-        let offset = 100;
+        let offset = 80;
         let topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
 
         window.scrollTo({ 
@@ -115,3 +115,30 @@ darkMode.addEventListener("click", () => {
     }
 });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sectionId = localStorage.getItem("scrollTarget"); // Get stored section
+    if (sectionId) {
+        localStorage.removeItem("scrollTarget"); // Remove to avoid multiple calls
+
+        // Ensure section is loaded before scrolling
+        setTimeout(() => {
+            scrollToSection(sectionId);
+        }, 300);
+    }
+});
+
+function scrollToSection(sectionId) {
+    let section = document.getElementById(sectionId);
+    if (section) {
+        let offset = 80; // Offset from top
+        let topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({ 
+            top: topPosition, 
+            behavior: "smooth" 
+        });
+    } else {
+        console.error(`Element with ID '${sectionId}' not found.`);
+    }
+}

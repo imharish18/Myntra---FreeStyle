@@ -41,6 +41,8 @@ a:hover {
 }
 #left{
     display: flex;
+    flex: 6;
+    flex-wrap: wrap;
 }
 #logo{
     width: 100px;
@@ -60,6 +62,10 @@ a:hover {
     justify-content: center;
     font-size: 12.5px;
 }
+.element a{
+    cursor: pointer;
+}
+
 #darkMode{
     height: 15px;
     width: 40px;
@@ -212,6 +218,99 @@ a:hover {
     border-radius: 15px;
     margin-right: 25px;
 }
+#textPlace2{
+    margin: 10px;
+    width: 100%;
+    font-size: 30px;
+    border: 1px solid #ccc; 
+    border-radius: 15px;
+    margin-right: 25px;
+    background: linear-gradient(to right, #6F93B9, #708CB0, #5F78A3);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#mostLeft{
+    flex: 2;
+}
+#locatonLogo{
+    font-size: 25px;
+    position: relative;
+    bottom: 3px;
+    margin-right: 5px;
+
+}
+#weatherPng img{
+    height:250px;
+    width: 250px;
+
+}
+#weatherPng{
+    position: relative;
+    bottom: 20px;
+    left: 30px;
+}
+#weatherType{
+    font-size: 40px;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    bottom: 45px;
+    left: 30px;
+
+}
+#locationWeather{
+    background-color: #00000036;
+    font-weight: 300;
+    padding-left: 20px;
+    border-radius: 100px;
+    width: fit-content;
+    padding-right: 20px;
+    padding-bottom: 3px;
+}
+#middleOne{
+    display: flex;
+    flex: 6;
+    margin-left: 50px;
+    padding-bottom: 20px;
+}
+#temp{
+    font-size: 150px;
+    font-weight: 200;
+    width: 416px;
+
+}
+#temp2{
+    margin-left: 30%;
+    position: relative;
+    bottom: 30px;
+}
+
+#innerBoxAboutTemp{
+    background-color: rgba(121, 213, 249, 0.493);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 40px;
+}
+#midTemp{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#midNew{
+    display: flex;
+    flex-direction: column;
+    flex: 6;
+    justify-content: flex-end;
+    gap: 10px;
+    border-left: 4px solid white ;
+    padding-left: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 #imageI{
     border-radius: 15px;
 }
@@ -1495,6 +1594,7 @@ box-shadow: 2px 2px 5px black;
     overflow: auto;
     position: relative;
     top: 50px;
+    padding-top: 30px;
 }
 
 .typeDocumentation{
@@ -1535,10 +1635,6 @@ box-shadow: 2px 2px 5px black;
 }
 #documentationParagraph{
     font-size: 20px;
-}
-.documentationSection{
-    margin-top: 30px;
-
 }
 .type1options.active {
     background-color: #f0f0f0; /* Light grey background */

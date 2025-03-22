@@ -8,18 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Emilys+Candy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
     <header id="header">
         <div id="left">
-            <div id="logo" class="element"><img src="IMAGES/2249158.png" alt=""></div>
-            <div class="element"><b><a class="headerText" href="MEN.html">MEN</a></b></div>
-            <div class="element"><b><a class="headerText" href="WOMEN.html">WOMEN</a></b></div>
-            <div class="element"><b><a class="headerText" href="KIDS.html">KIDS</a></b></div>
-            <div class="element"><b><a class="headerText" href="HOME&LIVING.html">HOME&LIVING</a></b></div>
-            <div class="element"><b><a class="headerText" href="BEAUTY.html">BEAUTY</a></b></div>
-            <div class="element"><b><a class="headerText" href="STUDIO.html">STUDIO</a></b></div>
+            <div id="logo" class="element" ><img src="IMAGES/2249158.png" alt=""></div>
+            <div class="element"><b><a id="headerTextMen" class="headerText" href="href/redirect1.html" onclick="storeAndRedirect(event, 'documentationMens')">MEN</a></b></div>            
+            <div class="element"><b><a id="headerTextWomen" class="headerText"  onclick="storeAndRedirect(event, 'documentationWomens')">WOMEN</a></b></div>
+            <div class="element"><b><a id="headerTextKids" class="headerText" onclick="storeAndRedirect(event, 'documentationKids')">KIDS</a></b></div>
+            <div class="element"><b><a id="headerTextHome&Living" class="headerText" onclick="storeAndRedirect(event, 'documentationHomeLiving')">HOME&LIVING</a></b></div>
+            <div class="element"><b><a id="headerTextBeauty" class="headerText"  onclick="storeAndRedirect(event, 'documentationBeauty')">BEAUTY</a></b></div>
+            <div class="element"><b><a id="headerTextStudio" class="headerText" onclick="storeAndRedirect(event, 'documentationStudio')">STUDIO</a></b></div>
             <div class="element"><b><a class="headerText offer" >OFFERS</a></b></div>
             <div class="element">
                 <div id="darkMode" class=""><div id="darkModeStatus"></div></div></div>
@@ -27,7 +28,7 @@
         </div>
         <div id="right">
             <div id="searchBox">
-                <div id="searchIcon"></div>
+                <di0900v id="searchIcon"></div>
                 <div id="searchBar"><input type="text" name="" id="searchBarIn" placeholder="Search for product, brand and more"></div>
             </div>
             <div id="system">
@@ -41,7 +42,7 @@
                 </div>
             
                 <div id="icon3">
-                    <a  class="headerText" href=""><div><img id="bagIcon" src="IMAGES/bag.JPG" alt=""></div>
+                    <a  class="headerText" style="cursor: pointer;" ><div><img id="bagIcon" src="IMAGES/bag.JPG" alt=""></div>
                     <div>Bag</div></a>
                 </div>
             </div>
@@ -165,7 +166,30 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                <div id="textPlace" class="textMap"><b>"Outfits that take you places – explore the world in style! 🌍💼 #MyntraOnTheGo"</b></div>
+                <div id="textPlace2" class="textMap">
+                    <div id="mostLeft">
+                        <div id="weatherLocatoin">
+                            <div id="locationWeather">
+                                <i id="locatonLogo" class="fa-solid fa-location-dot"></i>
+                                <span id="location"></span>
+                            </div>
+                        </div>
+                        <div id="weatherPng"><img id="weatherTypeImage" src=""  alt=""></div>
+                        <div id="weatherType"></div>
+                        
+                    </div>
+                    <div id="middleOne">
+                        <div id="midTemp">
+                            <div id="temp"></div>
+                            <div id="temp2"></div>
+                        </div>
+                        <div id="midNew">
+                            <div id="aboutTemp"><span id="innerBoxAboutTemp"></span></div>
+                            <div id="aboutTemp2"></div>
+                            <span id="windSpeed">I</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -324,51 +348,51 @@
     <div id="footerMyntra">
         <div id="footerUpperData">
             <div id="col1">
-                <div class="footerHead">ONLINE SHOPPING</div>
-                <div class="option">Men</div>
-                <div class="option">Women</div>
-                <div class="option">Kids</div>
-                <div class="option">Home & Living</div>
-                <div class="option">Beauty</div>
-                <div class="option">Gift Cards</div>
-                <div class="option">Myntra Insider</div>
+                <div class="footerHead" >ONLINE SHOPPING</div>
+                <div class="option"  onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Men</div>
+                <div class="option" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Women</div>
+                <div class="option" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Kids</div>
+                <div class="option" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Home & Living</div>
+                <div class="option" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Beauty</div>
+                <div class="option" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Gift Cards</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Myntra Insider</div>
             </div>
             <div id="col2">
-                <div class="footerHead">CUSTOMER POLICIES</div>
-                <div class="option">Contact Us</div>
-                <div class="option">FAQ</div>
-                <div class="option">T&C</div>
-                <div class="option">Terms Of Use</div>
-                <div class="option">Tracj Orders</div>
-                <div class="option">Shipping</div>
-                <div class="option">Cancellataion</div>
-                <div class="option">Returns</div>
-                <div class="option">Privacy Policy</div>
-                <div class="option">Grievance Redressal</div>
+                <div class="footerHead" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">CUSTOMER POLICIES</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Contact Us</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">FAQ</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">T&C</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Terms Of Use</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Tracj Orders</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Shipping</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Cancellataion</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Returns</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Privacy Policy</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationCustomerSupport')">Grievance Redressal</div>
             </div>
     
             <div id="col3">
                 <div class="footerHead">EXPERIENCE MYNTRA APP ON MOBILE</div>
                 <div id="footerPlatform">
-                    <img id="footerClickImage" class="desktop-androidDownLink" src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" style="height: 40px;">
-                    <img id="footerClickImage" class="desktop-iOSDownLink" src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" style="height: 40px;">
+                    <a href="https://play.google.com/store/apps/details?id=com.myntra.android&hl=en_IN"><img id="footerClickImage" class="desktop-androidDownLink" src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" style="height: 40px;"></a>
+                    <a href="https://apps.apple.com/in/app/myntra-fashion-shopping-app/id907394059"><img id="footerClickImage" class="desktop-iOSDownLink" src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" style="height: 40px;"></a>
                 </div>
                 <div class="footerHead2">KEEP IN TOUCH</div>
                 <div id="footerPlatform2">
-                    <img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" style="width: 25px; height: 25px;">
-                    <img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" style="width: 25px; height: 25px;">
-                    <img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" style="width: 30px; height: 25px;">
-                    <img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png" style="width: 25px; height: 26px; position: relative; top: 1px;">
+                    <a href="https://www.facebook.com/myntra/"><img id="footerClickImage"  src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" style="width: 25px; height: 25px;"></a>
+                    <a href="https://twitter.com/myntra?ref_src=twsrc%5Etfw"><img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" style="width: 25px; height: 25px;"></a>
+                    <a href="https://www.youtube.com/channel/UCMlJjMRSKaUQhXQ_9XjCGpg"><img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" style="width: 30px; height: 25px;"></a>
+                    <a href="https://www.instagram.com/myntra/?hl=en"><img id="footerClickImage" src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png" style="width: 25px; height: 26px; position: relative; top: 1px;"></a>
                 </div>
             </div>  
             <div id="col4">
-                <div class="footerHead">USEFUL LINKS</div>
-                <div class="option">Blog</div>
-                <div class="option">Careers</div>
-                <div class="option">Site Map</div>
-                <div class="option">Corporate Information</div>
-                <div class="option">Whitehat</div>
-                <div class="option">Cleartrip</div>
+                <div class="footerHead" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">USEFUL LINKS</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">Blog</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">Careers</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">Site Map</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">Corporate Information</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">Whitehat</div>
+                <div class="option" onclick="storeAndRedirect(event, 'documentationFeedbackReviews')">Cleartrip</div>
                 
             </div>
             <div id="col5">
@@ -387,53 +411,53 @@
             <div class="lowerFooterHead">POPULAR SEARCHES</div>
             <p id="lowerFooterData">
                 <p>
-                    <span class="lowerFooterKeyword">Adidas</span><span> |</span>
-                    <span class="lowerFooterKeyword">Arrow</span><span> |</span>
-                    <span class="lowerFooterKeyword">Fila</span><span> |</span>
-                    <span class="lowerFooterKeyword">Online Shopping</span><span> |</span>
-                    <span class="lowerFooterKeyword">Nike</span><span> |</span>
-                    <span class="lowerFooterKeyword">Pepe Jeans</span><span> |</span>
-                    <span class="lowerFooterKeyword">Puma</span><span> |</span>
-                    <span class="lowerFooterKeyword">United Colors of Benetton</span><span> |</span>
-                    <span class="lowerFooterKeyword">Fastrack</span><span> |</span>
-                    <span class="lowerFooterKeyword">Shorts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Being Human</span><span> |</span>
-                    <span class="lowerFooterKeyword">Skirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Woodland</span><span> |</span>
-                    <span class="lowerFooterKeyword">Supra</span><span> |</span>
-                    <span class="lowerFooterKeyword">Dresses</span><span> |</span>
-                    <span class="lowerFooterKeyword">Clothing</span><span> |</span>
-                    <span class="lowerFooterKeyword">Jewellery</span><span> |</span>
-                    <span class="lowerFooterKeyword">T-shirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Bags</span><span> |</span>
-                    <span class="lowerFooterKeyword">Watches</span><span> |</span>
-                    <span class="lowerFooterKeyword">Caps</span><span> |</span>
-                    <span class="lowerFooterKeyword">Shirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Backpacks</span><span> |</span>
-                    <span class="lowerFooterKeyword">Flip Flops</span><span> |</span>
-                    <span class="lowerFooterKeyword">Sunglasses</span><span> |</span>
-                    <span class="lowerFooterKeyword">Kurtas</span><span> |</span>
-                    <span class="lowerFooterKeyword">Lingerie</span><span> |</span>
-                    <span class="lowerFooterKeyword">Jackets</span><span> |</span>
-                    <span class="lowerFooterKeyword">Skechers</span><span> |</span>
-                    <span class="lowerFooterKeyword">Saree</span><span> |</span>
-                    <span class="lowerFooterKeyword">Sandals</span><span> |</span>
-                    <span class="lowerFooterKeyword">Puma Tshirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Woodland Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Titan Watches</span><span> |</span>
-                    <span class="lowerFooterKeyword">Fastrack Watches</span><span> |</span>
-                    <span class="lowerFooterKeyword">Wrangler Shirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Adidas Tshirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Nike Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Roadster Shirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Casual Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Running Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Nike Sports Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Jeans</span><span> |</span>
-                    <span class="lowerFooterKeyword">Being Human Tshirts</span><span> |</span>
-                    <span class="lowerFooterKeyword">Converse Shoes</span><span> |</span>
-                    <span class="lowerFooterKeyword">Cricket Shoes</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Adidas</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Arrow</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Fila</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Online Shopping</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Nike</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Pepe Jeans</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Puma</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">United Colors of Benetton</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Fastrack</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Shorts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Being Human</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Skirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Woodland</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Supra</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Dresses</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Clothing</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Jewellery</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">T-shirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Bags</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Watches</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Caps</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Shirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Backpacks</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Flip Flops</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Sunglasses</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Kurtas</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Lingerie</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Jackets</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Skechers</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Saree</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Sandals</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Puma Tshirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Woodland Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Titan Watches</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Fastrack Watches</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Wrangler Shirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Adidas Tshirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Nike Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Roadster Shirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Casual Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Running Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Nike Sports Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Jeans</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Being Human Tshirts</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Converse Shoes</span><span> |</span>
+                    <span class="lowerFooterKeyword" onclick="storeAndRedirect(event, 'doucumentationIntroduction')">Cricket Shoes</span>
                   </p>
                   
             </p>
