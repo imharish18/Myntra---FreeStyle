@@ -27,6 +27,18 @@ a:hover {
     z-index: 1000;
 
 }
+#headerLink{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background-color: white;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+    z-index: 1000;
+    position: fixed;
+}
 #left{
     display: flex;
 }
@@ -694,7 +706,6 @@ box-shadow: 2px 2px 5px black;
     font-size: 30px;
     font-weight: 600;
     font-style: italic;
-    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1051,138 +1062,6 @@ box-shadow: 2px 2px 5px black;
     background-color: #29303E;
     box-shadow: 2px 2px 10px #FD913C;
     cursor: pointer;
-}
-/* Adding Seciton */
-#fashionSection{
-    height: 70vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    padding: 30px;
-
-}
-#section1{
-    flex-grow: 1;
-    width: 100%;
-    background-color: #F13AB1;
-}
-#section2{
-    flex-grow: 1;
-    width: 100%;
-    background-color: #E72744;
-}
-#section3{
-    width: 100%;
-    flex-grow: 1;
-    background-color:  #FD913C;
-}
-#section4{
-    width: 100%;
-    flex-grow: 1;
-    background-color:  #F05524;
-}
-#section5{
-    flex-grow: 1;
-    width: 100%;
-    background-color:  #662371;
-}
-#section6{
-    flex-grow: 1;
-    width: 100%;
-    background-color: #0072BB;
-}
-#section7{
-    flex-grow: 1;
-    width: 100%;
-    background-color:  #F5881F;
-}
-#sectionCut{
-    height: 60%;
-    width: 15%;
-    border: 3px solid black;
-    border-radius: clamp(15px, 10px, 40px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    overflow: hidden;
-    text-align: center;
-    font-weight: 600;
-    color: white;
-
-}
-#sectionArea{
-    height: 100%;
-}
-#sectionDataCut{
-    height: 100%;
-    width: 60%;
-    background-color: #e727446e;
-    overflow-y: auto;  
-    padding-right: 10px; 
-
-
-}
-#sectionWhatsNew{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-#sectionDeals{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-#sectionTrends{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-#sectionSteals{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-#sectionHype{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-#sectionFeature{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-#sectionSports{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
-.sectionHeading{
-    text-align: center;
-    font-size: 80px;
-    font-weight: 800;
-}
-.subHeadingText{
-    font-size: 20px;
-
 }
 
 /* NEW */
@@ -1585,27 +1464,46 @@ box-shadow: 2px 2px 5px black;
 #doucmentationHeading{
     font-size: 50px;
     font-weight: 700;
+    position: relative;
+    align-items: center;
+    top: 12px;
+
 }
 #rootDocumentation{
     display: flex;
-    padding-top: 20px;
-}
-#sideSection{
-
-    height: 100%;
-    width: 50%;
-    flex: 1.5;
+    align-items: flex-start;
 
 }
 #mainSection{
-    background-color: #0072BB;
+    background-color: #F1F3F4;
     width: 50%;
-    flex: 8.5;
+    flex: 8;
+
 }
+#sideSection {
+    position: fixed; 
+    left: 0;
+    top: 80px;
+    height: 90vh;
+    width: 20%; 
+    overflow: auto;
+}
+
+#mainSection {
+    margin-left: 20%;
+    width: 80%;
+    overflow: auto;
+    position: relative;
+    top: 50px;
+}
+
 .typeDocumentation{
     font-size: 25px;
     font-weight: 700;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-bottom: 17px;
+    margin-top: 20px;
+
 }
 .typeDocumentation div{
     font-size: 20px;
@@ -1613,12 +1511,113 @@ box-shadow: 2px 2px 5px black;
     font-weight: 400;
     cursor: pointer;
     padding: 5px;
+    margin-top: 4px;
 }
 .typeDocumentation div:hover{
-    font-size: 20px;
     margin-left: 10px;
-    font-weight: 500;
-    background-color: #0073bb38;
+    font-weight: 550;
+    background-color: #9db9cb38;
     border-radius: 10px;
+}
+#dataDocumentation{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#documentationHead{
+    font-size: 50px;
+    font-weight: 700;
 
+}
+#documentationMiniHead{
+    font-size: 25px;
+    font-weight: 600;
+
+}
+#documentationParagraph{
+    font-size: 20px;
+}
+.documentationSection{
+    margin-top: 30px;
+
+}
+.type1options.active {
+    background-color: #f0f0f0; /* Light grey background */
+    font-weight: bold;
+    color: #333;
+    border-left: 4px solid #E93D67; /* Blue left border */
+    border-radius: 10px;
+}
+
+#footerUpperData{
+    width: 100%;
+    display: flex;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    justify-content: center;
+    gap: 50px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.option{
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.option:hover{
+    font-weight: 600;
+}
+#col5Element{
+    margin-bottom: 15px;
+    display: flex;
+    width: 65%;
+    gap: 10px;
+}
+#footerPlatform{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#footerPlatform2{
+    margin-top: 5px;
+    margin-left: 10px;
+    display: flex;
+    gap: 9px;
+}
+.footerHead2{
+    margin-top: 10px;
+}
+#footerClickImage{
+    cursor: pointer;
+}
+#footerLowerData{
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 2%;
+}
+.lowerFooterHead{
+    width: 100%;
+    gap: 50px;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+#lowerFooterData{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#lowerFooterTnC{
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+.lowerFooterKeyword{
+    cursor: pointer;
+}
+.lowerFooterKeyword:hover{
+    font-weight: 500;
 }

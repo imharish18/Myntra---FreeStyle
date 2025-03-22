@@ -46,7 +46,6 @@ function darkModeOn(value){
 }
 document.addEventListener("DOMContentLoaded", () => {
     let darkMode = document.querySelector("#darkMode");
-    let darkModeStatus = document.querySelector("#darkModeStatus");
     let darkmode = 0; 
     let profileIcon = document.querySelector("#profileIcon");
     let favIcon = document.querySelector("#favIcon");
@@ -383,76 +382,6 @@ function getNewJoke() {
 }
 nextJokeButton.addEventListener("click",getNewJoke)
 
-
-
-function handleSectionClick(sectionId) {
-    // Hide all section data divs
-    const allSections = document.querySelectorAll('#sectionDataCut > div');
-    allSections.forEach(section => {
-        section.style.display = 'none';
-    });
-
-    // Show the clicked section's corresponding content
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-        targetSection.style.display = 'flex'; // Set it to 'flex' to make it visible
-    }
-}
-
-// Add event listeners for the left-side sections
-document.getElementById('section1').addEventListener('click', function() {
-    handleSectionClick('sectionWhatsNew');
-});
-
-document.getElementById('section2').addEventListener('click', function() {
-    handleSectionClick('sectionDeals');
-});
-
-document.getElementById('section3').addEventListener('click', function() {
-    handleSectionClick('sectionTrends');
-});
-
-document.getElementById('section4').addEventListener('click', function() {
-    handleSectionClick('sectionSteals');
-});
-
-document.getElementById('section5').addEventListener('click', function() {
-    handleSectionClick('sectionHype');
-});
-
-document.getElementById('section6').addEventListener('click', function() {
-    handleSectionClick('sectionFeature');
-});
-
-document.getElementById('section7').addEventListener('click', function() {
-    handleSectionClick('sectionSports');
-});
-
-
-// REALTIME CLOCK
-// function updateClock() {
-//     const clock = document.getElementById("time");
-//     const now = new Date();
-  
-//     let hours = now.getHours();
-//     let minutes = now.getMinutes();
-//     let seconds = now.getSeconds();
-//     const ampm = hours >= 12 ? 'PM' : 'AM';
-    
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; 
-//     minutes = minutes < 10 ? '0' + minutes : minutes;
-//     seconds = seconds < 10 ? '0' + seconds : seconds;
-    
-//     const timeString = hours + ":" + minutes + ":" + seconds + " " + ampm;
-    
-//     clock.innerHTML = timeString;
-//   }
-  
-//   setInterval(updateClock, 1000);
-  
-//   updateClock();
-// Function to update the clock every second
 function updateClock() {
     const hoursElement = document.getElementById("hours");
     const minutesElement = document.getElementById("min");
@@ -513,7 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let timer;
 
     async function loadQuestions() {
-        const response = await fetch("questions.json");
+        const response = await fetch("href/questions.json");
         questions = await response.json();
         questions = questions.sort(() => Math.random() - 0.5);
         startQuiz();
@@ -646,4 +575,46 @@ document.addEventListener("DOMContentLoaded", function () {
         work1();
         quizPopUp.style.display = "none";
     };
+});
+
+function scrollToSection(sectionId) {
+    let section = document.getElementById(sectionId);
+    if (section) {
+        let offset = 100; // Margin from the top
+        let topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({ 
+            top: topPosition, 
+            behavior: "smooth" 
+        });
+    } else {
+        console.error(`Element with ID '${sectionId}' not found.`);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".documentationSection");
+    const navLinks = document.querySelectorAll(".type1options");
+
+    function changeActiveNav() {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((nav) => {
+            nav.classList.remove("active");
+            if (nav.getAttribute("onclick").includes(currentSection)) {
+                nav.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", changeActiveNav);
 });
