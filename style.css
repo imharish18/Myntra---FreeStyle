@@ -1352,7 +1352,7 @@ box-shadow: 2px 2px 5px black;
 /* The background blur */
 .blur-background {
     filter: blur(5px);
-    pointer-events: none; /* Disable interactions with blurred content */
+    pointer-events: none; 
     transition: filter 0.3s ease;
 }
 
@@ -1637,10 +1637,10 @@ box-shadow: 2px 2px 5px black;
     font-size: 20px;
 }
 .type1options.active {
-    background-color: #f0f0f0; /* Light grey background */
+    background-color: #f0f0f0; 
     font-weight: bold;
     color: #333;
-    border-left: 4px solid #E93D67; /* Blue left border */
+    border-left: 4px solid #E93D67; 
     border-radius: 10px;
 }
 

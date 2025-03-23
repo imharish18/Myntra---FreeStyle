@@ -265,8 +265,8 @@ function typeAndBackspace() {
 typeAndBackspace();
 
 //StopWatch
-let totalSeconds = 24 * 3600; // 24-hour countdown
-let timerId; // Store the timer ID
+let totalSeconds = 24 * 3600; 
+let timerId; 
 
 function updateTimer() {
     let hours = Math.floor(totalSeconds / 3600);
@@ -287,19 +287,14 @@ function updateTimer() {
 }
 
 document.getElementById("timeButton").addEventListener("click", function() {
-    // Generate a random discount between 30% and 50%
     let discount = Math.floor(Math.random() * 21) + 30;
     document.getElementById("offerOffTime").textContent = `Congrats!! You Got ${discount}% Off!`;
 
-    // Hide the button after clicking
     this.style.display = "none";
-
-    // Show the realTime div
     document.getElementById("realTime").style.display = "block";
 
-    // Clear existing timer and restart
     clearTimeout(timerId);
-    totalSeconds = 24 * 3600; // Reset to 24 hours
+    totalSeconds = 24 * 3600; 
     updateTimer();
 });
 
@@ -652,7 +647,52 @@ function tempCF(c, f, element) {
 }
 
 function storeAndRedirect(event, sectionId) {
-    event.preventDefault(); // Prevent default anchor behavior
-    localStorage.setItem("scrollTarget", sectionId); // Store section ID
-    window.location.href = "href/redirect1.html"; // Redirect manually
+    event.preventDefault();
+    localStorage.setItem("scrollTarget", sectionId); 
+    window.location.href = "href/redirect1.html"; 
 }
+document.addEventListener("DOMContentLoaded", async () => {
+    let locationElement = document.querySelector("#location");
+    let tempInC = document.querySelector("#temp");
+    let weatherTypeImage = document.querySelector("#weatherTypeImage");
+    let weatherType = document.querySelector("#weatherType");
+    let innerBoxAboutTemp = document.querySelector("#innerBoxAboutTemp");
+    let aboutTemp2 = document.querySelector("#aboutTemp2");
+    let windSpeed = document.querySelector("#windSpeed");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async position => {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            let url = `http://api.weatherapi.com/v1/current.json?key=553dce1e935546f5841110150252203&q=${lat},${lon}&aqi=yes`;
+
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                console.log(data);
+
+                let cityName = data.location.name;
+                let tempC = data.current.temp_c;
+                let tempF = data.current.temp_f;
+                let weatherImage = data.current.condition.icon;
+                let aqi = data.current.air_quality["us-epa-index"];
+                let windSpeedAPI = data.current.wind_kph;
+
+                tempCF(tempC, tempF, tempInC);
+                aqIndex(aqi, aboutTemp2);
+                cloudPer(data.current.cloud, innerBoxAboutTemp);
+                weatherTypeImage.src = "https:" + weatherImage;
+                weatherType.textContent = data.current.condition.text;
+                locationElement.textContent = cityName;
+                windSpeed.textContent = `Wind Speed 💨 ${windSpeedAPI} kph`;
+
+            } catch (error) {
+                console.log("ERROR FETCHING WEATHER DATA:", error);
+            }
+        }, error => {
+            console.log("Geolocation error:", error);
+        });
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+});
