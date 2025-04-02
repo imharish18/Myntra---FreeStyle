@@ -276,7 +276,7 @@ a:hover {
     padding-bottom: 20px;
 }
 #temp{
-    font-size: 150px;
+    font-size: 140px;
     font-weight: 200;
     width: 416px;
 
@@ -1046,7 +1046,8 @@ box-shadow: 2px 2px 5px black;
 
 
 #closePopup {
-    width: 30px;
+    height: 30px;
+    width: 33px;
     position: absolute;
     top: 10px;
     right: 20px;
@@ -1056,6 +1057,13 @@ box-shadow: 2px 2px 5px black;
     margin: 5px;
     margin-top: 15px;
     background-color: white;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding-bottom: 3px;
 }
 
 /* Left & Right Navigation Buttons */
